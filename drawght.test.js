@@ -38,4 +38,16 @@ describe("drawght", function() {
 
     expect(result).toBe("- Text\n- Test\n- Tagged")
   });
+
+  test("convert item in a list", function() {
+    var template = '{languages#2.name} site "https:{languages#2.url}" and {languages#1.name} site "https:{languages#1.url}"'
+    var result = drawght.compile(template, {
+      languages: [
+        { name: "Go", url: "//go.dev/" },
+        { name: "Ruby", url: "//www.ruby-lang.org/" },
+      ]
+    });
+
+    expect(result).toBe('Ruby site "https://www.ruby-lang.org/" and Go site "https://go.dev/"')
+  });
 });
