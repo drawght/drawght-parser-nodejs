@@ -30,5 +30,12 @@ describe("drawght", function() {
     expect(result).toBe(`Drawght - @drawght/parser v0.1.0 (2021-07-01)`);
   });
 
-  test.todo("parse lists");
+  test("convert list", function() {
+    var template = "- {tags}"
+    var result = drawght.compile(template, {
+      tags: [ "Text", "Test", "Tagged" ]
+    });
+
+    expect(result).toBe("- Text\n- Test\n- Tagged")
+  });
 });
