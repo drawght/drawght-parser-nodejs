@@ -4,7 +4,7 @@
   "description": "Drawght is a data handler for text without logic statements.",
   "main": "drawght.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [
     "drawght",
@@ -25,5 +25,8 @@
     "README.pt-BR.md",
     "drawght.js",
     "package.json"
-  ]
+  ],
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
 }
