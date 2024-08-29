@@ -28,7 +28,7 @@ const getValueFromKey = function(nestedKey, data) {
   }, data);
 }
 
-const parse = function(template, data) {
+const compile = function(template, data) {
   return parseKeys(parseQueries(template, data), data);
 }
 
@@ -72,8 +72,5 @@ const parseTemplate = function(template, data) {
 }
 
 module.exports = {
-  parseQueries,
-  parseKeys,
-  parseTemplate,
-  parse,
+  compile,
 };

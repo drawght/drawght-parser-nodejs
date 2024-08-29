@@ -3,9 +3,9 @@ const
   drawght = require("./drawght")
 
 describe("drawght", function() {
-  test("parse variables", function() {
+  test("convert variables", function() {
     var template = "{name} v{version} ({release})";
-    var result = drawght.parseKeys(template, {
+    var result = drawght.compile(template, {
       name: "Drawght",
       version: "0.1.0",
       release: "2021-07-01",
@@ -14,9 +14,9 @@ describe("drawght", function() {
     expect(result).toBe(`Drawght v0.1.0 (2021-07-01)`);
   });
 
-  test("parse objects", function() {
+  test("convert objects", function() {
     var template = "{package.name} v{package.version} ({package.release})";
-    var result = drawght.parseKeys(template, {
+    var result = drawght.compile(template, {
       package: {
         name: "Drawght",
         version: "0.1.0",
