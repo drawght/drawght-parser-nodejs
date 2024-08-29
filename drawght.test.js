@@ -15,16 +15,19 @@ describe("drawght", function() {
   });
 
   test("convert objects", function() {
-    var template = "{package.name} v{package.version} ({package.release})";
+    var template = "{product.name} - {package.name} v{package.version} ({package.release})";
     var result = drawght.compile(template, {
-      package: {
+      product: {
         name: "Drawght",
+      },
+      package: {
+        name: "@drawght/parser",
         version: "0.1.0",
         release: "2021-07-01",
       }
     });
 
-    expect(result).toBe(`Drawght v0.1.0 (2021-07-01)`);
+    expect(result).toBe(`Drawght - @drawght/parser v0.1.0 (2021-07-01)`);
   });
 
   test.todo("parse lists");
