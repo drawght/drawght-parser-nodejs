@@ -50,4 +50,16 @@ describe("drawght", function() {
 
     expect(result).toBe('Ruby site "https://www.ruby-lang.org/" and Go site "https://go.dev/"')
   });
+
+  test("convert list of objects", function() {
+    var template = "- [{references:name}]({references:url})"
+    var result = drawght.compile(template, {
+      references: [
+        { name: "Mustache", url: "//mustache.github.io" },
+        { name: "Handlebars", url: "//handlebarsjs.com" },
+      ]
+    });
+
+    expect(result).toBe("- [Mustache](//mustache.github.io)\n- [Handlebars](//handlebarsjs.com)")
+  });
 });
