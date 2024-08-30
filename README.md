@@ -82,7 +82,7 @@ The syntax was inspired by:
 Tags:
 
 - Template (tagged by Hallison Batista).
-- Draf (tagged by Hallison Batista).
+- Draft (tagged by Hallison Batista).
 ```
 
 In a template written in HTML: 
@@ -165,8 +165,30 @@ Tags:
 
 <ul>
   <li>Template (tagged by Hallison Batista).</li>
-  <li>Draf (tagged by Hallison Batista).</li>
+  <li>Draft (tagged by Hallison Batista).</li>
 </ul>
+```
+
+## Install
+
+```bash
+npm install --global @drawght/compiler
+```
+
+## Usage
+
+```javascript
+const drawght = require("@drawght/compiler")
+
+const template = "{package.name} v{package.version}"
+const result = drawght.compile(template, {
+  package: {
+    name: "Drawght",
+    version: "1.0.0",
+  }
+})
+
+console.log(result)
 ```
 
 ## Syntax
@@ -190,7 +212,7 @@ Drawght has a simple syntax:
 
 ## License (MIT)
 
-### Copyright (c) 2021, Hallison Batista
+### Copyright (c) 2021-2024, Hallison Batista
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in

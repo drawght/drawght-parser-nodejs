@@ -19,6 +19,6 @@ templates.forEach(function(file) {
     console.log(`------------------------------------------------------------------------------`);
     console.log(template);
     console.log(`------------------------------------------------------------------------------`);
-    console.log(drawght.parse(template, data));
+    console.log(drawght.compile(template, data));
   });
 });

@@ -59,7 +59,7 @@ Marcações:
 - {tags} (marcado por {author.name}).
 ```
 
-O	processamento de Drawght retorna o seguinte resultado:
+O processamento de Drawght retorna o seguinte resultado:
 
 ```
 # Drawght é um rascunho muito útil
@@ -84,7 +84,7 @@ A sintaxe foi inspirada por:
 Marcações:
 
 - Template (marcado por Hallison Batista).
-- Draf (marcado por Hallison Batista).
+- Draft (marcado por Hallison Batista).
 ```
 
 Em um _template_ escrito em HTML:
@@ -167,8 +167,30 @@ Marcações:
 
 <ul>
   <li>Template (marcado por Hallison Batista).</li>
-  <li>Draf (marcado por Hallison Batista).</li>
+  <li>Draft (marcado por Hallison Batista).</li>
 </ul>
+```
+
+## Instalação
+
+```bash
+npm install --global @drawght/compiler
+```
+
+## Utilização
+
+```javascript
+const drawght = require("@drawght/compiler")
+
+const template = "{package.name} v{package.version}"
+const result = drawght.compile(template, {
+  package: {
+    name: "Drawght",
+    version: "1.0.0",
+  }
+})
+
+console.log(result)
 ```
 
 ## Sintaxe
@@ -193,7 +215,7 @@ Drawght possui uma sintaxe simples:
 
 ## Licença (MIT)
 
-### Copyright (c) 2021, Hallison Batista
+### Copyright (c) 2021-2024, Hallison Batista
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
