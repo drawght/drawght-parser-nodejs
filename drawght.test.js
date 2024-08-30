@@ -4,14 +4,15 @@ const
 
 describe("drawght", function() {
   test("convert variables", function() {
-    var template = "{name} v{version} ({release})";
+    var template = "{name} v{version} ({release date}/{start-at})";
     var result = drawght.compile(template, {
       name: "Drawght",
       version: "0.1.0",
-      release: "2021-07-01",
+      "release date": "2021-07-01",
+      "start-at": "2021-06-30",
     });
 
-    expect(result).toBe(`Drawght v0.1.0 (2021-07-01)`);
+    expect(result).toBe(`Drawght v0.1.0 (2021-07-01/2021-06-30)`);
   });
 
   test("convert objects", function() {
